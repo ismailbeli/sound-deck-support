@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Deck – Destek | Support</title>
+  <meta name="description" content="Sound Deck destek sayfası. Renkli ses tuşlarıyla korku, kutlama ve kuş sesleri. Support page for Sound Deck, the colorful soundboard app.">
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    :root {
+      --bg: #080808;
+      --surface: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.12);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.7);
+      --text-tertiary: rgba(255, 255, 255, 0.38);
+      --orange: #FF8A00;
+      --red: #FF453A;
+      --purple: #BF5AF2;
+      --blue: #0A84FF;
+      --yellow: #FFD60A;
+      --green: #32D74B;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 20px 64px; }
+
+    header { text-align: center; margin-bottom: 40px; }
+    header img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 32px rgba(0,0,0,.6); }
+    h1 { font-size: 28px; font-weight: 700; margin-top: 16px; letter-spacing: .5px; }
+    .tagline { color: var(--text-secondary); font-size: 15px; margin-top: 6px; }
+
+    .lang-toggle {
+      display: flex; justify-content: center; gap: 8px; margin-top: 20px;
+    }
+    .lang-toggle button {
+      background: var(--surface); color: var(--text-secondary);
+      border: 1px solid var(--border); border-radius: 999px;
+      padding: 6px 18px; font-size: 13px; font-weight: 600; cursor: pointer;
+    }
+    .lang-toggle button.active { color: #000; border-color: transparent; }
+
+    section { margin-bottom: 36px; }
+    h2 {
+      font-size: 13px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 14px;
+    }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 16px;
+    }
+    .card .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+    .card h3 { font-size: 15px; font-weight: 600; display: flex; align-items: center; }
+    .card p { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+    .faq-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 16px 18px; margin-bottom: 10px;
+    }
+    .faq-item h3 { font-size: 15px; font-weight: 600; }
+    .faq-item p { font-size: 14px; color: var(--text-secondary); margin-top: 6px; }
+
+    .contact-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px; text-align: center;
+    }
+    .contact-box p { color: var(--text-secondary); font-size: 14px; }
+    .contact-box a {
+      display: inline-block; margin-top: 12px; padding: 10px 24px;
+      background: var(--orange); color: #000; font-weight: 600; font-size: 14px;
+      border-radius: 999px; text-decoration: none;
+    }
+
+    .policy { color: var(--text-secondary); font-size: 14px; }
+    .policy h3 { color: var(--text-primary); font-size: 15px; margin: 20px 0 6px; }
+    .policy p { margin-bottom: 8px; }
+    .policy a { color: var(--blue); }
+    .updated { color: var(--text-tertiary); font-size: 13px; margin-bottom: 4px; }
+
+    footer { text-align: center; color: var(--text-tertiary); font-size: 12px; margin-top: 48px; }
+
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="icon.png" alt="Sound Deck">
+      <h1>Sound Deck</h1>
+      <p class="tagline" data-tr="Renkli ses tuşlarıyla eğlenceli ses efektleri">Renkli ses tuşlarıyla eğlenceli ses efektleri</p>
+      <div class="lang-toggle">
+        <button id="btn-tr" class="active" onclick="setLang('tr')">Türkçe</button>
+        <button id="btn-en" onclick="setLang('en')">English</button>
+      </div>
+    </header>
+
+    <!-- ============ TÜRKÇE ============ -->
+    <div id="content-tr">
+      <section>
+        <h2>Paketler</h2>
+        <div class="cards">
+          <div class="card"><h3><span class="dot" style="background:var(--red)"></span>Korku</h3><p>Zombiler, çığlıklar, ürkütücü kahkahalar ve gıcırtılar</p></div>
+          <div class="card"><h3><span class="dot" style="background:var(--yellow)"></span>Kutlama</h3><p>Alkışlar, tezahüratlar ve coşkulu kalabalık sesleri</p></div>
+          <div class="card"><h3><span class="dot" style="background:var(--green)"></span>Kuşlar</h3><p>Doğadan gerçek kuş sesleri</p></div>
+          <div class="card"><h3><span class="dot" style="background:var(--blue)"></span>Çevrimdışı</h3><p>Tüm sesler cihazınızda, internet gerekmez</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sıkça Sorulan Sorular</h2>
+        <div class="faq-item">
+          <h3>Ayarları nasıl açarım?</h3>
+          <p>Ana ekranda parmağınızı aşağı kaydırın. Açılan menüde Ayarlar ve Ses Paketleri düğmelerini göreceksiniz.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Ses paketini nasıl değiştiririm?</h3>
+          <p>Aşağı kaydırıp kitaplık simgesine dokunun. Beğendiğiniz paketi seçin; seçiminiz hatırlanır.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Titreşimi veya ipuçlarını kapatabilir miyim?</h3>
+          <p>Evet. Ayarlar → Genel bölümünden titreşim ve yönergeleri açıp kapatabilirsiniz.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Ses çalmıyor, ne yapmalıyım?</h3>
+          <p>Cihazınızın sessiz modunda olmadığından ve medya sesinin açık olduğundan emin olun. Ayarlar'dan ses seviyesini kontrol edebilirsiniz.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Uygulama internet gerektiriyor mu?</h3>
+          <p>Hayır. Tüm sesler uygulama içinde saklanır, çevrimdışı çalışır.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>İletişim</h2>
+        <div class="contact-box">
+          <p>Sorularınız, önerileriniz veya hata bildirimleriniz için bize yazın:</p>
+          <a href="mailto:ismailbeli@icloud.com">ismailbeli@icloud.com</a>
+        </div>
+      </section>
+
+      <section id="privacy">
+        <h2>Gizlilik Politikası</h2>
+        <div class="policy">
+          <p class="updated">Son güncellenme: Ağustos 2026</p>
+
+          <h3>1. Toplanan Veriler</h3>
+          <p>Sound Deck, kişisel veri toplamaz. Uygulama yalnızca cihazınızda yerel olarak saklanan ayarları (tema tercihi, ses seviyesi, dil seçimi vb.) kaydeder. Bu veriler cihazınızın dışına aktarılmaz.</p>
+
+          <h3>2. Üçüncü Taraf Hizmetleri</h3>
+          <p>Uygulama, üçüncü taraf hizmetleri veya analitik araçları kullanmaz.</p>
+
+          <h3>3. Çerezler ve İzleme</h3>
+          <p>Uygulama çerez veya izleme teknolojileri kullanmaz.</p>
+
+          <h3>4. Çocukların Gizliliği</h3>
+          <p>Uygulama 13 yaş altındaki çocuklara yöneliktir ve kişisel veri toplamaz.</p>
+
+          <h3>5. Değişiklikler</h3>
+          <p>Bu politika zaman zaman güncellenebilir. Değişiklikler uygulama içinde bildirilecektir.</p>
+
+          <h3>6. İletişim</h3>
+          <p>Sorularınız için: <a href="mailto:ismailbeli@icloud.com">ismailbeli@icloud.com</a></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ ENGLISH ============ -->
+    <div id="content-en" hidden>
+      <section>
+        <h2>Packs</h2>
+        <div class="cards">
+          <div class="card"><h3><span class="dot" style="background:var(--red)"></span>Horror</h3><p>Zombies, screams, creepy laughs and creaks</p></div>
+          <div class="card"><h3><span class="dot" style="background:var(--yellow)"></span>Celebration</h3><p>Cheers, applause and euphoric crowd sounds</p></div>
+          <div class="card"><h3><span class="dot" style="background:var(--green)"></span>Birds</h3><p>Real bird calls from nature</p></div>
+          <div class="card"><h3><span class="dot" style="background:var(--blue)"></span>Offline</h3><p>All sounds are on your device, no internet needed</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>How do I open Settings?</h3>
+          <p>Swipe down on the home screen. You'll see the Settings and Sound Packs buttons in the menu that appears.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I change the sound pack?</h3>
+          <p>Swipe down and tap the library icon. Pick your favorite pack — your choice is remembered.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I turn off vibration or hints?</h3>
+          <p>Yes. Go to Settings → General to toggle vibration and guidance hints.</p>
+        </div>
+        <div class="faq-item">
+          <h3>No sound is playing, what should I do?</h3>
+          <p>Make sure your device isn't in silent mode and media volume is up. You can also check the volume in Settings.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does the app require internet?</h3>
+          <p>No. All sounds are stored inside the app and it works fully offline.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <div class="contact-box">
+          <p>For questions, suggestions or bug reports, reach us at:</p>
+          <a href="mailto:ismailbeli@icloud.com">ismailbeli@icloud.com</a>
+        </div>
+      </section>
+
+      <section id="privacy-en">
+        <h2>Privacy Policy</h2>
+        <div class="policy">
+          <p class="updated">Last updated: August 2026</p>
+
+          <h3>1. Data Collected</h3>
+          <p>Sound Deck does not collect personal data. The app only stores settings locally on your device (theme preference, volume, language selection, etc.). This data is not transferred outside your device.</p>
+
+          <h3>2. Third-Party Services</h3>
+          <p>The app does not use third-party services or analytics tools.</p>
+
+          <h3>3. Cookies and Tracking</h3>
+          <p>The app does not use cookies or tracking technologies.</p>
+
+          <h3>4. Children's Privacy</h3>
+          <p>The app is directed at children under 13 and does not collect personal data.</p>
+
+          <h3>5. Changes</h3>
+          <p>This policy may be updated from time to time. Changes will be announced within the app.</p>
+
+          <h3>6. Contact</h3>
+          <p>For questions: <a href="mailto:ismailbeli@icloud.com">ismailbeli@icloud.com</a></p>
+        </div>
+      </section>
+    </div>
+
+    <footer>© 2026 Sound Deck</footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.getElementById('content-tr').hidden = lang !== 'tr';
+      document.getElementById('content-en').hidden = lang !== 'en';
+      document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+    }
+  </script>
+</body>
+</html>
